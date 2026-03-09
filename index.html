@@ -12,6 +12,7 @@
   --accent: #c44b2b;
   --accent2: #2b6cc4;
   --accent3: #2b8c5a;
+  --accent4: #9b59b6;
   --muted: #7a7568;
   --light: #e8e0d0;
   --card: #fffcf5;
@@ -115,6 +116,7 @@ section.active { display: block; }
 .project-card.c1::before { background: var(--accent); }
 .project-card.c2::before { background: var(--accent2); }
 .project-card.c3::before { background: var(--accent3); }
+.project-card.c4::before { background: var(--accent4); }
 .project-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 30px var(--shadow);
@@ -176,6 +178,7 @@ section.active { display: block; }
 .detail-label.c1 { color: var(--accent); }
 .detail-label.c2 { color: var(--accent2); }
 .detail-label.c3 { color: var(--accent3); }
+.detail-label.c4 { color: var(--accent4); }
 .detail-page h2 {
   font-family: var(--serif); font-size: 2.2rem;
   line-height: 1.2; margin-bottom: 1rem;
@@ -207,6 +210,7 @@ section.active { display: block; }
 .stat-number.c1 { color: var(--accent); }
 .stat-number.c2 { color: var(--accent2); }
 .stat-number.c3 { color: var(--accent3); }
+.stat-number.c4 { color: var(--accent4); }
 .stat-label {
   font-size: 0.78rem; color: var(--muted);
   letter-spacing: 0.02em;
@@ -225,6 +229,7 @@ section.active { display: block; }
 .tech-tag.c1 { border-color: var(--accent); color: var(--accent); }
 .tech-tag.c2 { border-color: var(--accent2); color: var(--accent2); }
 .tech-tag.c3 { border-color: var(--accent3); color: var(--accent3); }
+.tech-tag.c4 { border-color: var(--accent4); color: var(--accent4); }
 
 /* Interactive charts */
 .chart-container {
@@ -253,6 +258,7 @@ canvas { width: 100% !important; height: auto !important; }
 .insight.c1 { border-color: var(--accent); }
 .insight.c2 { border-color: var(--accent2); }
 .insight.c3 { border-color: var(--accent3); }
+.insight.c4 { border-color: var(--accent4); }
 .insight-title {
   font-weight: 600; font-size: 0.85rem;
   margin-bottom: 0.3rem; text-transform: uppercase;
@@ -261,6 +267,7 @@ canvas { width: 100% !important; height: auto !important; }
 .insight-title.c1 { color: var(--accent); }
 .insight-title.c2 { color: var(--accent2); }
 .insight-title.c3 { color: var(--accent3); }
+.insight-title.c4 { color: var(--accent4); }
 .insight p {
   font-size: 0.9rem; margin: 0;
 }
@@ -448,6 +455,118 @@ footer {
 .delay-2 { animation-delay: 0.2s; }
 .delay-3 { animation-delay: 0.3s; }
 .delay-4 { animation-delay: 0.4s; }
+
+/* ── NARRATIVE HOME PAGE ── */
+.narrative-section {
+  max-width: 860px; margin: 0 auto;
+  padding: 0 2rem 2rem;
+}
+.narrative-block {
+  margin-bottom: 2rem;
+}
+.narrative-block h3 {
+  font-family: var(--serif); font-size: 1.4rem;
+  margin-bottom: 0.7rem; letter-spacing: -0.01em;
+}
+.narrative-block p {
+  font-size: 0.95rem; color: #3a3a3a;
+  line-height: 1.75; margin-bottom: 0.8rem;
+}
+.section-header {
+  font-family: var(--serif); font-size: 1.4rem;
+  margin-bottom: 1.2rem; letter-spacing: -0.01em;
+  max-width: 860px; margin-left: auto; margin-right: auto;
+  padding: 0 2rem; margin-bottom: 1rem;
+}
+
+/* Experience grid */
+.exp-grid {
+  display: grid; gap: 1rem;
+  max-width: 860px; margin: 0 auto;
+  padding: 0 2rem;
+}
+.exp-card {
+  display: flex; gap: 1rem;
+  background: var(--card);
+  border: 1px solid var(--light);
+  border-radius: 12px; padding: 1.3rem 1.5rem;
+  transition: box-shadow 0.3s;
+}
+.exp-card:hover { box-shadow: 0 4px 16px var(--shadow); }
+.exp-icon {
+  font-size: 1.4rem; flex-shrink: 0;
+  width: 2.2rem; height: 2.2rem;
+  display: grid; place-items: center;
+}
+.exp-content { flex: 1; }
+.exp-dates {
+  font-family: var(--mono); font-size: 0.7rem;
+  color: var(--muted); letter-spacing: 0.04em;
+  text-transform: uppercase; margin-bottom: 0.15rem;
+}
+.exp-title {
+  font-weight: 600; font-size: 1rem;
+  margin-bottom: 0.1rem;
+}
+.exp-org {
+  font-size: 0.88rem; color: var(--accent);
+  margin-bottom: 0.35rem;
+}
+.exp-card p {
+  font-size: 0.85rem; color: var(--muted);
+  line-height: 1.6; margin: 0;
+}
+
+/* Skills grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  max-width: 860px; margin: 0 auto;
+  padding: 0 2rem;
+}
+.skill-group { margin-bottom: 0.5rem; }
+.skill-group-label {
+  font-family: var(--mono); font-size: 0.7rem;
+  color: var(--muted); letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 0.5rem;
+}
+.skills-grid .proficiency-list { margin: 0; }
+
+/* Contact bar */
+.contact-bar {
+  max-width: 860px; margin: 0 auto;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-family: var(--mono); font-size: 0.8rem;
+  color: var(--muted);
+  border-top: 1px solid var(--light);
+  margin-top: 1rem;
+}
+.contact-sep {
+  margin: 0 0.6rem;
+  color: var(--light);
+}
+
+/* Project cards inside home need grid context */
+.narrative-section .project-grid {
+  max-width: 860px; margin: 0 auto;
+  padding: 0;
+}
+.narrative-section .project-card .stat-row {
+  grid-template-columns: repeat(3, 1fr);
+}
+.narrative-section .stat-block {
+  padding: 0.8rem 1rem;
+}
+
+@media (max-width: 700px) {
+  .exp-card { flex-direction: column; gap: 0.5rem; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .narrative-section .project-card .stat-row { grid-template-columns: 1fr 1fr 1fr; }
+  .contact-bar { font-size: 0.72rem; }
+  .contact-bar span { display: inline; }
+}
 </style>
 </head>
 <body>
@@ -457,70 +576,265 @@ footer {
   <div class="nav-inner">
     <a href="#" class="logo" onclick="showSection('home')">Tanim<span>.</span></a>
     <div class="nav-links">
-      <a href="#" onclick="showSection('home')" id="nav-home" class="active">Projects</a>
+      <a href="#" onclick="showSection('home')" id="nav-home" class="active">Home</a>
       <a href="#" onclick="showSection('project1')" id="nav-project1">Deep Learning</a>
       <a href="#" onclick="showSection('project2')" id="nav-project2">Travel Demand</a>
       <a href="#" onclick="showSection('project3')" id="nav-project3">Bus Optimization</a>
-      <a href="#" onclick="showSection('about')" id="nav-about">About</a>
+      <a href="#" onclick="showSection('project4')" id="nav-project4">Citi Bike</a>
     </div>
   </div>
 </nav>
 
 <!-- ════════════════════════════════════════════════════ -->
-<!--  HOME / PROJECT OVERVIEW                            -->
+<!--  HOME / NARRATIVE LANDING PAGE                      -->
 <!-- ════════════════════════════════════════════════════ -->
 <section id="home" class="active">
+  <!-- HERO -->
   <div class="hero">
-    <div class="hero-label fade-in">NYU Tandon — M.S. Transportation Systems</div>
-    <h1 class="fade-in delay-1">Data-driven solutions for <em>urban mobility</em></h1>
-    <p class="hero-sub fade-in delay-2">Three graduate research projects applying machine learning, operations research, and discrete choice modeling to real-world transportation challenges — from predicting traffic incidents to optimizing NYC bus routes.</p>
+    <div class="hero-label fade-in">Tanim Islam</div>
+    <h1 class="fade-in delay-1">Building transportation systems that <em>connect people</em> and <em>strengthen communities</em></h1>
+    <p class="hero-sub fade-in delay-2">I'm a transportation systems graduate student at NYU Tandon with industry experience deploying autonomous vehicles and scaling robotic platforms. My work sits at the intersection of data science, operations research, and urban planning, all in service of a simple goal: making mobility more equitable, safer, and more accessible for everyone.</p>
   </div>
 
-  <div class="project-grid">
-    <div class="project-card c1 fade-in delay-2" onclick="showSection('project1')">
-      <div class="card-top">
-        <span class="card-course">Engineering Applications of Deep Learning</span>
-        <span class="card-arrow">↗</span>
+  <!-- NARRATIVE: WHY THIS WORK -->
+  <div class="narrative-section fade-in delay-3">
+    <div class="narrative-block">
+      <h3>Why I Do This Work</h3>
+      <p>Growing up as the child of Bangladeshi immigrants in a predominantly white suburb of Michigan, I experienced life between two cultures. A defining family trip to New York City opened my eyes to the transformative power of public transportation. Riding the Staten Island Ferry and navigating the subway system, I witnessed how transit brings together people of every background, language, and walk of life. That experience showed me something important: public transportation is more than infrastructure. It's a crucial connector that empowers individuals and builds community.</p>
+      <p>That conviction has guided my career. After studying mechanical engineering at the University of Michigan, I spent nearly a decade in industry working at the frontier of autonomous systems, robotics, and mobility technology. Now, as a graduate student at NYU Tandon, I'm building the quantitative and planning skills to ensure these technologies serve the people who need them most.</p>
+    </div>
+
+    <div class="narrative-block">
+      <h3>What I Learned in the AV Industry</h3>
+      <p>At <strong>May Mobility</strong>, I led one of the first rural autonomous vehicle deployments in the United States: the goMARTI program in Grand Rapids, Minnesota. Over 24 months, we completed more than 10,000 trips with 98% rider satisfaction, serving a community with very limited mobility options. I planned routes, built data infrastructure, tuned vehicle sensors for harsh Minnesota winters, and worked directly with community leaders and transit agencies to integrate our service into existing mobility networks.</p>
+      <p>The experience was transformative. I saw firsthand that technology, when implemented thoughtfully and strategically, can create safe and accessible alternatives to car ownership or unreliable transit service. But I also saw the gaps. We struggled to optimize service during unpredictable demand peaks, had to balance coverage area against operational efficiency in areas with limited connectivity, and couldn't adapt quickly enough to shifting community needs. These were planning and systems problems, not just engineering ones.</p>
+      <p>At <strong>Formant</strong>, I continued this work from the platform side, consulting robotics companies from early-stage to enterprise scale on how to deploy and operate autonomous fleets. I saw the same pattern across industries: the technology works, but the systems thinking needed to deploy it equitably and sustainably requires a different kind of expertise.</p>
+    </div>
+
+    <div class="narrative-block">
+      <h3>What I'm Building Toward</h3>
+      <p>I believe the next decade of transportation will be defined by how well cities integrate new mobility technologies with existing infrastructure. This means managing today's challenges better: optimizing bus networks, using data to guide bike share station placement and expansion into underserved neighborhoods, evaluating e-scooter pilot programs with rigor, and making evidence-based decisions about where to invest limited transit dollars. And it means preparing for what's coming: AV pilots, robotaxi services, and autonomous transit that need to be deployed as community resources, not premium luxuries.</p>
+      <p>I want to do this work in the public sector. The decisions that shape how a city moves belong in public hands, and the analytical tools that inform those decisions should be built by people who understand both the technical complexity and the communities being served. At its core, I develop frameworks and analyses that translate complex data into actionable decisions, so that the people making policy can make it with evidence, not intuition. That means not just running the model, but building the dashboard, writing the briefing, and telling the story that helps a non-technical decision-maker act.</p>
+    </div>
+  </div>
+
+  <!-- EDUCATION & EXPERIENCE HIGHLIGHTS -->
+  <div class="narrative-section">
+    <h3 class="section-header">Education & Experience</h3>
+
+    <div class="exp-grid">
+      <div class="exp-card edu">
+        <div class="exp-icon">🎓</div>
+        <div class="exp-content">
+          <div class="exp-dates">Sep 2025 - May 2027 (Expected)</div>
+          <div class="exp-title">M.S. Transportation Systems</div>
+          <div class="exp-org">NYU Tandon School of Engineering</div>
+          <p>Coursework in urban transportation planning, travel demand forecasting, deep learning, logistics systems, and transportation economics. Applying ML, optimization, and discrete choice modeling to real transit challenges in New York City.</p>
+        </div>
       </div>
-      <h3 class="card-title">Traffic Incident Duration Prediction</h3>
-      <p class="card-desc">Combining XGBoost with LSTM text embeddings from operator notes to predict crash clearance times — achieving R² = 0.82 on 140,000 Virginia incidents.</p>
-      <div class="card-tags">
-        <span class="tag">PyTorch</span>
-        <span class="tag">XGBoost</span>
-        <span class="tag">LSTM</span>
-        <span class="tag">NLP</span>
-        <span class="tag">140K incidents</span>
+      <div class="exp-card work">
+        <div class="exp-icon">🤖</div>
+        <div class="exp-content">
+          <div class="exp-dates">Nov 2020 - Feb 2025</div>
+          <div class="exp-title">AV Deployment & Robotics</div>
+          <div class="exp-org">May Mobility → Formant</div>
+          <p>Led one of the first rural AV transit deployments in the U.S., partnering with municipal governments and transit agencies. Built performance dashboards and reporting workflows for community stakeholders tracking service KPIs. Then consulted robotics companies at scale on fleet operations, producing technical assessments and compliance documentation for clients.</p>
+        </div>
+      </div>
+      <div class="exp-card work">
+        <div class="exp-icon">⚙️</div>
+        <div class="exp-content">
+          <div class="exp-dates">Aug 2016 - Sep 2020</div>
+          <div class="exp-title">Systems & Software Engineering</div>
+          <div class="exp-org">Fresh Consulting, Vesper Technologies, National Instruments</div>
+          <p>Built technical foundations across LabVIEW software development, MEMS hardware validation, and customer-facing systems engineering. 99% satisfaction rate at NI; led process transfers and enterprise project delivery.</p>
+        </div>
+      </div>
+      <div class="exp-card edu">
+        <div class="exp-icon">〽️</div>
+        <div class="exp-content">
+          <div class="exp-dates">Aug 2012 - May 2016</div>
+          <div class="exp-title">B.S.E. Mechanical Engineering</div>
+          <div class="exp-org">University of Michigan, Ann Arbor</div>
+          <p></p>
+        </div>
       </div>
     </div>
 
-    <div class="project-card c2 fade-in delay-3" onclick="showSection('project2')">
-      <div class="card-top">
-        <span class="card-course">Forecasting Urban Travel Demand</span>
-        <span class="card-arrow">↗</span>
+    <h3 class="section-header" style="margin-top: 2rem;">Technical Skills</h3>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-label">Programming & Data</div>
+        <div class="proficiency-list">
+          <span class="prof-tag">Python</span><span class="prof-tag">pandas</span><span class="prof-tag">geopandas</span><span class="prof-tag">scikit-learn</span><span class="prof-tag">PyTorch</span><span class="prof-tag">SQL</span><span class="prof-tag">MATLAB</span>
+        </div>
       </div>
-      <h3 class="card-title">From Uber to Autonomous Ride-Hailing</h3>
-      <p class="card-desc">Tracking how TNCs reshaped NYC mode choice from 2009–2022 using multinomial logit models to project autonomous vehicle adoption patterns.</p>
-      <div class="card-tags">
-        <span class="tag">Multinomial Logit</span>
-        <span class="tag">NHTS Data</span>
-        <span class="tag">Linear Regression</span>
-        <span class="tag">pylogit</span>
+      <div class="skill-group">
+        <div class="skill-group-label">Visualization & Dashboards</div>
+        <div class="proficiency-list">
+          <span class="prof-tag">Chart.js</span><span class="prof-tag">matplotlib</span><span class="prof-tag">seaborn</span><span class="prof-tag">Interactive web viz</span><span class="prof-tag">Power BI (learning)</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">GIS & Spatial Analysis</div>
+        <div class="proficiency-list">
+          <span class="prof-tag">ArcGIS Pro</span><span class="prof-tag">QGIS</span><span class="prof-tag">GTFS processing</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Modeling & Optimization</div>
+        <div class="proficiency-list">
+          <span class="prof-tag">Gurobi</span><span class="prof-tag">Integer programming</span><span class="prof-tag">Network flow</span><span class="prof-tag">Multinomial logit</span><span class="prof-tag">LSTM / Deep learning</span><span class="prof-tag">XGBoost</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-label">Transport Planning</div>
+        <div class="proficiency-list">
+          <span class="prof-tag">4-step demand models</span><span class="prof-tag">Frank-Wolfe assignment</span><span class="prof-tag">Cross-classification</span><span class="prof-tag">Mode choice</span>
+        </div>
       </div>
     </div>
 
-    <div class="project-card c3 fade-in delay-4" onclick="showSection('project3')">
-      <div class="card-top">
-        <span class="card-course">Urban Transportation & Logistics</span>
-        <span class="card-arrow">↗</span>
+    <h3 class="section-header" style="margin-top: 2rem;">Community</h3>
+    <p style="max-width: 860px; margin: 0 auto; padding: 0 2rem 1rem; font-size: 0.95rem; color: #3a3a3a; line-height: 1.7;">Outside of work and school, I've served as a <strong>Big Brother</strong> through Big Brothers Big Sisters of Central Texas and as a <strong>Student Mentor Volunteer</strong> through Boston Partners in Education. Mentorship has been one of the most grounding parts of my life, and it reinforces why I care about building systems that expand access and opportunity for everyone.</p>
+  </div>
+
+  <!-- RESEARCH PROJECTS -->
+  <div class="narrative-section">
+    <h3 class="section-header">Graduate Research</h3>
+    <p style="max-width: 860px; margin: 0 auto; padding: 0 2rem 1.5rem; font-size: 0.95rem; color: var(--muted); line-height: 1.7;">Each of these projects bridges technical analysis with actionable recommendations for transportation agencies and municipalities. Click through to explore the methodology, interactive visualizations, and key findings.</p>
+
+    <div class="project-grid">
+      <div class="project-card c1" onclick="showSection('project1')">
+        <div class="card-top">
+          <span class="card-course">Engineering Applications of Deep Learning</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <h3 class="card-title">Traffic Incident Duration Prediction</h3>
+        <p class="card-desc">Combining XGBoost with LSTM text embeddings from operator notes to predict crash clearance times. The key insight: 64 learned embeddings from free-text notes outperform 326 structured features, proving that agencies already have the data they need for better predictions.</p>
+        <div class="stat-row" style="margin: 0.8rem 0 1rem;">
+          <div class="stat-block">
+            <div class="stat-number c1" style="font-size:1.3rem;">R² = 0.82</div>
+            <div class="stat-label">Combined model</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number c1" style="font-size:1.3rem;">+17%</div>
+            <div class="stat-label">From text embeddings</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number c1" style="font-size:1.3rem;">140K</div>
+            <div class="stat-label">VA incidents analyzed</div>
+          </div>
+        </div>
+        <div class="card-tags">
+          <span class="tag">PyTorch</span>
+          <span class="tag">XGBoost</span>
+          <span class="tag">LSTM</span>
+          <span class="tag">NLP</span>
+          <span class="tag">scikit-learn</span>
+        </div>
       </div>
-      <h3 class="card-title">MTA B43 Bus Route Optimization</h3>
-      <p class="card-desc">Two-stage optimization framework combining binary integer programming for stop consolidation with minimum cost flow for vehicle scheduling — $970K Year 1 potential benefit.</p>
-      <div class="card-tags">
-        <span class="tag">Gurobi</span>
-        <span class="tag">Integer Programming</span>
-        <span class="tag">Network Flow</span>
-        <span class="tag">GTFS</span>
+
+      <div class="project-card c2" onclick="showSection('project2')">
+        <div class="card-top">
+          <span class="card-course">Forecasting Urban Travel Demand</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <h3 class="card-title">From Uber to Autonomous Ride-Hailing</h3>
+        <p class="card-desc">Analyzing how TNCs reshaped NYC mode choice from 2009-2022 using multinomial logit models across six modes (auto, transit, taxi, TNC, walk, bike). The key insight: income barriers to ride-hailing fell 95% in five years, but age-based resistance strengthened. Bike preference showed strong age and distance sensitivity with implications for micromobility planning and station siting.</p>
+        <div class="stat-row" style="margin: 0.8rem 0 1rem;">
+          <div class="stat-block">
+            <div class="stat-number c2" style="font-size:1.3rem;">95%</div>
+            <div class="stat-label">Income barrier drop (work trips)</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number c2" style="font-size:1.3rem;">ρ² ≈ 0.54</div>
+            <div class="stat-label">Strong model fit</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number c2" style="font-size:1.3rem;">3 eras</div>
+            <div class="stat-label">2009 → 2017 → 2022</div>
+          </div>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Multinomial Logit</span>
+          <span class="tag">NHTS Data</span>
+          <span class="tag">pylogit</span>
+          <span class="tag">Linear Regression</span>
+        </div>
       </div>
+
+      <div class="project-card c3" onclick="showSection('project3')">
+        <div class="card-top">
+          <span class="card-course">Urban Transportation & Logistics</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <h3 class="card-title">MTA B43 Bus Route Optimization</h3>
+        <p class="card-desc">Two-stage optimization for stop consolidation and vehicle scheduling on a real Brooklyn bus route. The key insight: stop optimization is a low-cost, high-impact lever that agencies can deploy without new legislation, and it acts as a force multiplier for bus lanes, signal priority, and all-door boarding.</p>
+        <div class="stat-row" style="margin: 0.8rem 0 1rem;">
+          <div class="stat-block">
+            <div class="stat-number c3" style="font-size:1.3rem;">$970K</div>
+            <div class="stat-label">Year 1 total benefit</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number c3" style="font-size:1.3rem;">-32%</div>
+            <div class="stat-label">Stops removed</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number c3" style="font-size:1.3rem;">$120K/yr</div>
+            <div class="stat-label">Ongoing savings</div>
+          </div>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Gurobi</span>
+          <span class="tag">Integer Programming</span>
+          <span class="tag">Network Flow</span>
+          <span class="tag">GTFS</span>
+        </div>
+      </div>
+
+      <div class="project-card c4" onclick="showSection('project4')">
+        <div class="card-top">
+          <span class="card-course">Independent Research — In Progress</span>
+          <span class="card-arrow">↗</span>
+        </div>
+        <h3 class="card-title">Optimizing NYC's E-Bike Fleet: Citi Bike Pricing & Allocation</h3>
+        <p class="card-desc">Building a behavioral choice model from real Citi Bike ridership data to understand what drives e-bike vs. pedal bike selection, then simulating pricing and fleet allocation scenarios to maximize revenue without eroding ridership. The key insight: discrete choice modeling + Monte Carlo simulation can give operators statistically grounded policy comparisons, not just point estimates.</p>
+        <div class="stat-row" style="margin: 0.8rem 0 1rem;">
+          <div class="stat-block">
+            <div class="stat-number c4" style="font-size:1.3rem;">GBFS API</div>
+            <div class="stat-label">Real-time availability data</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number c4" style="font-size:1.3rem;">Logit</div>
+            <div class="stat-label">Revealed preference model</div>
+          </div>
+          <div class="stat-block">
+            <div class="stat-number c4" style="font-size:1.3rem;">Monte Carlo</div>
+            <div class="stat-label">Scenario simulation</div>
+          </div>
+        </div>
+        <div class="card-tags">
+          <span class="tag">Binary Logit</span>
+          <span class="tag">Monte Carlo</span>
+          <span class="tag">GBFS API</span>
+          <span class="tag">Revenue Optimization</span>
+          <span class="tag">Price Elasticity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="narrative-section" style="padding-bottom: 3rem;">
+    <div class="contact-bar">
+      <span>tslm94@gmail.com</span>
+      <span class="contact-sep">·</span>
+      <span>(734) 276-8007</span>
+      <span class="contact-sep">·</span>
+      <span>Brooklyn, NY</span>
+      <span class="contact-sep">·</span>
+      <span>U.S. & Canadian Dual Citizen</span>
     </div>
   </div>
 </section>
@@ -653,8 +967,8 @@ embeddings = model.lstm(embedded_text)[<span class="code-string">1</span>][<span
     </div>
 
     <h3>Two-Part Methodology</h3>
-    <p><strong>Trip Generation</strong> used linear regression on NHTS survey data (2009, 2017, 2022) filtered to the NYC metro area, predicting household trip counts from household size, income, vehicle ownership, workers, drivers, population density, and life cycle stage. By comparing coefficients across survey years, the study tracked how ride-share changed the factors driving trip-making.</p>
-    <p><strong>Mode Choice</strong> used multinomial logit models on NYC Citywide Mobility Survey data (2017, 2019, 2022) with six alternatives (auto, transit, taxi, TNC, walk, bike) and three explanatory variables (income, trip distance, age) to capture how preference for each mode evolved as TNCs matured.</p>
+    <p><strong>Trip Generation</strong> used linear regression on NHTS survey data (2009, 2017, 2022) filtered to the NYC metro area, predicting household trip counts from household size, income, vehicle ownership, workers, drivers, population density, and life cycle stage. The NHTS data required structured querying across codebook fields (CDIVMSAR, URBAN, MSASIZE) to isolate Mid-Atlantic urban responses with heavy rail access — essentially SQL-style filtering across a relational survey database of 4,800+ household records per year. By comparing coefficients across survey years, the study tracked how ride-share changed the factors driving trip-making.</p>
+    <p><strong>Mode Choice</strong> used multinomial logit models on NYC Citywide Mobility Survey data (2017, 2019, 2022) with six alternatives (auto, transit, taxi, TNC, walk, bike) and three explanatory variables (income, trip distance, age). Trip-level records were merged with household and person demographic tables to construct analysis datasets — a data pipeline requiring careful joins, missing-value handling, and logical consistency checks across 5,000 observations per model. The visualization pipeline (7 publication-quality chart types) was built in matplotlib/seaborn to translate coefficient evolution into clear narratives for non-technical audiences.</p>
 
     <div class="tech-stack">
       <span class="tech-tag c2">pylogit</span>
@@ -699,11 +1013,17 @@ embeddings = model.lstm(embedded_text)[<span class="code-string">1</span>][<span
       <p>Unlike income effects which democratized rapidly, TNC age coefficients remained negative and actually strengthened over time (β = −0.33 → −0.70 for non-work trips). Older travelers' resistance reflects fundamental preferences for human-operated services, not unfamiliarity that exposure resolves. This has direct implications: the populations most cited as potential AV beneficiaries (elderly non-drivers) express the most resistance to driverless technology.</p>
     </div>
 
+    <div class="insight c2">
+      <div class="insight-title c2">Implications for Bike Share & Micromobility</div>
+      <p>The model includes bike as one of six mode alternatives, and the results carry direct relevance for shared micromobility planning. Bike ASCs declined sharply (non-work: -0.93 → -3.75; work: +0.07 → -3.17), suggesting cycling preference eroded as TNCs expanded, particularly for work trips. Distance coefficients for bike remained strongly negative across all years, confirming that physical exertion limits practical range. Combined with the age sensitivity patterns, these findings inform station density decisions: bike share expansion into new neighborhoods should account for the demographic profiles that predict adoption (younger, shorter-trip corridors) while developing targeted strategies for populations where cycling competes less effectively against TNCs and auto.</p>
+    </div>
+
     <div class="relevance-box">
-      <h4>Recommendations for Policymakers</h4>
-      <p><span class="highlight">Robotaxi income barriers will fall fast</span> — agencies should plan for rapid cross-income adoption when services launch, not the slow 15+ year diffusion of car ownership.</p>
-      <p><span class="highlight">Transit faces selective vulnerability</span> — work commuting is under pressure (ASC declined 1.6 units), but non-work transit shows resilience. Agencies should focus improvements on the commute market and explore AV partnerships for first/last-mile rather than end-to-end competition.</p>
-      <p><span class="highlight">Hybrid deployment strategies</span> with human presence (e.g., one operator monitoring multiple vehicles) can bridge the age acceptance gap — 66% acceptance with a human onboard vs. just 13% without.</p>
+      <h4>Recommendations for Policymakers & Shared Mobility Programs</h4>
+      <p><span class="highlight">Shared mobility income barriers fall fast</span> through service-based access. Agencies managing bike share and e-scooter programs should expect rapid cross-income adoption once service areas expand, rather than assuming these remain niche or premium services.</p>
+      <p><span class="highlight">Transit faces selective vulnerability</span> — work commuting is under pressure (ASC declined 1.6 units), but non-work transit shows resilience. Agencies should focus improvements on the commute market and explore shared mobility partnerships (bike share as first/last-mile) rather than viewing them as competition.</p>
+      <p><span class="highlight">Age and distance patterns should guide station siting.</span> Bike and e-scooter preference drops sharply with age and trip distance. Expansion planning should use demographic and trip-length data to identify high-adoption corridors and pair station density with the populations most likely to ride.</p>
+      <p><span class="highlight">Hybrid deployment strategies</span> with human presence (e.g., one operator monitoring multiple vehicles) can bridge the age acceptance gap for autonomous services — 66% acceptance with a human onboard vs. just 13% without.</p>
     </div>
   </div>
 </section>
@@ -748,6 +1068,7 @@ embeddings = model.lstm(embedded_text)[<span class="code-string">1</span>][<span
     <h3>Two-Stage Optimization Framework</h3>
     <p><strong>Stage 1 — Stop Consolidation</strong> uses stochastic binary integer programming (via Gurobi) to determine which stops to retain. The objective minimizes total passenger cost: in-vehicle time cost for all riders plus walking penalty costs for displaced riders at removed stops. Ten ridership scenarios were generated using triangular distributions (±25% of base) to ensure the solution is robust to demand uncertainty.</p>
     <p><strong>Stage 2 — Vehicle Scheduling</strong> applies minimum cost network flow to assign buses to trips given the reduced cycle times. For each pair of trips, the model evaluates whether a single bus can serve both in sequence, then finds the minimum-cost assignment covering all trips.</p>
+    <p><strong>Data infrastructure:</strong> The analysis integrates GTFS transit data (a relational database of stops, trips, stop_times, and routes tables joined via foreign keys), NYCDOT pedestrian counts, Census demographic data, and MATSim agent-based simulation outputs. Ridership was distributed across hourly intervals using MTA system-wide patterns, and stop-level boardings were estimated by scaling simulation output to match MTA reported averages. All data processing used Python (pandas, geopandas) with SQL-style filtering, merging, and aggregation across multiple source tables.</p>
 
     <div class="tech-stack">
       <span class="tech-tag c3">Gurobi</span>
@@ -816,109 +1137,95 @@ m.<span class="code-func">setObjective</span>(in_vehicle + walk_penalty, GRB.MIN
       <h4>Recommendations & Transferability</h4>
       <p><span class="highlight">Hybrid implementation strategy:</span> Reinvest weekday/Saturday savings into ~3% more trips (higher ridership periods) while capturing Sunday fleet reduction for cost savings. This balances fiscal responsibility with ridership growth objectives.</p>
       <p><span class="highlight">Force multiplier:</span> Stop consolidation amplifies the benefits of dedicated bus lanes, transit signal priority, and all-door boarding (OMNY). Each intervention makes the others more effective — coordinated deployment yields benefits greater than the sum of parts.</p>
-      <p><span class="highlight">The methodology scales:</span> Brooklyn's bus network inherited stop patterns from the streetcar era. This framework is directly transferable to similar routes across any agency's network, offering a systematic approach to network-wide service improvement.</p>
+      <p><span class="highlight">The methodology scales beyond buses.</span> The core optimization framework — balancing access (walking penalty for displaced users) against system efficiency (travel time for all users) — applies to any station-siting or network density problem. Bike share station planning faces the same fundamental tradeoff: too many docks are expensive to maintain and rebalance, too few means riders walk too far. The walking penalty cost function, ridership-weighted objective, and stochastic scenario generation developed here could be adapted to optimize Citi Bike station density, evaluate e-scooter corral placement, or assess the impact of adding or removing stations during service area expansion.</p>
     </div>
   </div>
 </section>
 
+<!-- About section content merged into Home page above -->
+
 <!-- ════════════════════════════════════════════════════ -->
-<!--  ABOUT PAGE                                         -->
+<!--  PROJECT 4: CITI BIKE E-BIKE OPTIMIZATION           -->
 <!-- ════════════════════════════════════════════════════ -->
-<section id="about">
-  <div class="about-page">
-    <div class="about-header">
-      <div class="hero-label fade-in">About</div>
-      <h2 class="fade-in delay-1">Tanim Islam</h2>
-      <p class="fade-in delay-2">Transportation systems graduate student with industry experience deploying autonomous vehicles and scaling robotic hardware. Bridging technical depth with practical implementation to build mobility systems that serve everyone.</p>
+<section id="project4">
+  <div class="detail-page">
+    <a class="back-btn" onclick="showSection('home')">← All Projects</a>
+    <div class="detail-label c4">Independent Research — In Progress</div>
+    <h2>Optimizing NYC's E-Bike Fleet: A Data-Driven Approach to Citi Bike Pricing & Allocation</h2>
+    <p>New York City's Citi Bike system offers riders a choice between traditional pedal bikes and electric-assist e-bikes, but the two aren't interchangeable from a business or user perspective. E-bikes cost more to operate and carry a usage surcharge, yet demand for them continues to grow. This raises a practical question for system operators: how should Citi Bike price e-bikes and allocate them across stations to maximize revenue while still serving riders well?</p>
+
+    <h3>Why This Matters for Bike Share Operations</h3>
+    <div class="relevance-box">
+      <h4>The Operator's Dilemma</h4>
+      <p>Citi Bike is in the latter stages of a five-year expansion that will put <span class="highlight">more than 40,000 bicycles</span> within a five-minute walk of half of NYC residents. As e-bike demand grows, operators face a fleet mix question that has real revenue and equity implications: price e-bikes too high and you push lower-income riders back to pedal bikes (or off the system entirely); price too low and you can't cover the higher operating costs. <span class="highlight">Getting this right requires understanding rider behavior at a granular level</span> — not averages, but how specific rider segments respond to price, distance, terrain, and weather.</p>
+      <p>This project builds exactly that understanding: a behavioral model estimated from real trip data that can simulate the revenue and ridership impacts of different pricing and allocation policies <span class="highlight">before they're implemented</span>.</p>
     </div>
 
-    <h3>What I Care About</h3>
-    <div class="values-grid">
-      <div class="value-card">
-        <div class="value-icon">🚍</div>
-        <h4>Equitable Mobility</h4>
-        <p>Public transportation isn't just infrastructure — it's a crucial connector that empowers individuals and builds community. Growing up between two cultures showed me that transit bridges divides when it works well.</p>
+    <h3>Project Status</h3>
+    <div class="stat-row">
+      <div class="stat-block">
+        <div class="stat-number c4">GBFS API</div>
+        <div class="stat-label">Real-time bike availability data collection</div>
       </div>
-      <div class="value-card">
-        <div class="value-icon">🤖</div>
-        <h4>Technology as Equalizer</h4>
-        <p>Automation and shared mobility should expand access rather than create parallel premium-only services. I develop frameworks that help communities implement these technologies to strengthen, not replace, existing transit.</p>
+      <div class="stat-block">
+        <div class="stat-number c4">Binary Logit</div>
+        <div class="stat-label">Revealed preference choice model</div>
       </div>
-      <div class="value-card">
-        <div class="value-icon">🔬</div>
-        <h4>Data-Driven Decisions</h4>
-        <p>From deploying AVs in rural Minnesota to optimizing Brooklyn bus routes, I believe quantitative methods should inform how we build and operate transit — making the case for investment with evidence, not intuition.</p>
+      <div class="stat-block">
+        <div class="stat-number c4">Monte Carlo</div>
+        <div class="stat-label">Scenario simulation framework</div>
       </div>
-    </div>
-
-    <h3>Professional Journey</h3>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="tl-date">Sep 2025 — May 2027</div>
-        <div class="tl-title">M.S. Transportation Systems</div>
-        <div class="tl-company">NYU Tandon School of Engineering</div>
-        <div class="tl-desc">Deep learning, travel demand forecasting, operations research, and urban logistics. Applying ML and optimization to real transit challenges in NYC.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-date">Apr 2022 — Feb 2025</div>
-        <div class="tl-title">Technical Product Manager</div>
-        <div class="tl-company">Formant</div>
-        <div class="tl-desc">Consulted robotics companies of all sizes in scaling their technical and operational processes. Led product development for teleoperation and real-time fleet management offerings.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-date">Nov 2020 — Mar 2022</div>
-        <div class="tl-title">Sr. Field Autonomy Engineer</div>
-        <div class="tl-company">May Mobility</div>
-        <div class="tl-desc">Led goMARTI — one of the first rural AV deployments in the US. 10,000+ successful trips, 98% rider satisfaction. Consulted pre-sales and optimized route selection with community leaders and stakeholders.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-date">Aug 2019 — Sep 2020</div>
-        <div class="tl-title">LabVIEW Software Developer</div>
-        <div class="tl-company">Fresh Consulting</div>
-        <div class="tl-desc">Software lead for complete project cycles delivering solutions for Fortune 500 tech companies, from planning through verification and validation.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-date">Jun 2018 — Jun 2019</div>
-        <div class="tl-title">Test & Validation Engineer</div>
-        <div class="tl-company">Vesper Technologies</div>
-        <div class="tl-desc">Cross-functional engineer working on novel MEMS microphone technology. Minimized downtime, increased throughput, and led process transfer from Boston to overseas facility.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-date">Aug 2016 — Jun 2018</div>
-        <div class="tl-title">Application Engineer</div>
-        <div class="tl-company">National Instruments</div>
-        <div class="tl-desc">Customer-facing engineer providing pre-sales solutions and post-sales success on technical HW/SW systems. 99% satisfaction rate, 90% engagement rate for system architecture consulting.</div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-date">Aug 2012 — May 2016</div>
-        <div class="tl-title">B.S.E. Mechanical Engineering</div>
-        <div class="tl-company">University of Michigan, Ann Arbor</div>
-        <div class="tl-desc"></div>
+      <div class="stat-block">
+        <div class="stat-number c4">In Progress</div>
+        <div class="stat-label">Actively collecting data & building models</div>
       </div>
     </div>
 
-    <h3>Technical Proficiencies</h3>
-    <div class="proficiency-list">
-      <span class="prof-tag">Python</span>
-      <span class="prof-tag">pandas</span>
-      <span class="prof-tag">scikit-learn</span>
-      <span class="prof-tag">PyTorch</span>
-      <span class="prof-tag">XGBoost</span>
-      <span class="prof-tag">Gurobi</span>
-      <span class="prof-tag">ArcGIS</span>
-      <span class="prof-tag">SQL</span>
-      <span class="prof-tag">ROS</span>
-      <span class="prof-tag">MATLAB</span>
-      <span class="prof-tag">LabVIEW (CLD)</span>
-      <span class="prof-tag">TestStand (CTD)</span>
-      <span class="prof-tag">C++ (limited)</span>
-      <span class="prof-tag">SolidWorks</span>
-      <span class="prof-tag">GTFS</span>
-      <span class="prof-tag">NI DAQ Systems</span>
+    <h3>Methodology</h3>
+    <p><strong>Data Collection & Cleaning:</strong> Using the Citi Bike GBFS (General Bikeshare Feed Specification) API and published trip histories, I'm constructing a dataset of trips where riders had genuine access to both bike types at their origin station, filtering out cases where availability constraints made the "choice" meaningless. This revealed-preference approach ensures the model captures actual behavioral decisions, not artifacts of bike availability.</p>
+
+    <p><strong>Discrete Choice Model:</strong> A binary logit model quantifies how factors like trip distance, elevation change, weather conditions, time of day, and price influence a rider's decision to pick an e-bike over a pedal bike. The model is estimated using maximum likelihood on the cleaned dataset, producing coefficients that can be interpreted as willingness-to-pay and price elasticity measures.</p>
+
+    <p><strong>Monte Carlo Simulation:</strong> The estimated model feeds into a simulation framework that tests different pricing and fleet allocation scenarios under realistic uncertainty (variable weather, fluctuating demand, shifting station-level availability). Rather than producing a single point estimate, the simulation generates outcome distributions with confidence intervals, enabling statistically grounded comparisons across policy alternatives.</p>
+
+    <p><strong>Analytical Framework:</strong> The project is grounded in the Manheim-Florian-Gaudry (MFG) framework for transportation systems analysis, connecting activity systems, transport system design, demand modeling, and performance evaluation into a unified structure.</p>
+
+    <div class="tech-stack">
+      <span class="tech-tag c4">Python</span>
+      <span class="tech-tag c4">GBFS API</span>
+      <span class="tech-tag c4">Binary Logit</span>
+      <span class="tech-tag c4">Max. Likelihood Estimation</span>
+      <span class="tech-tag c4">Monte Carlo Simulation</span>
+      <span class="tech-tag c4">pandas</span>
+      <span class="tech-tag c4">Revenue Optimization</span>
+      <span class="tech-tag c4">Consumer Surplus</span>
     </div>
 
-    <h3>Community</h3>
-    <p>Outside of work and school, I've been a <strong>Big Brother</strong> through Big Brothers Big Sisters of Central Texas, and a <strong>Student Mentor Volunteer</strong> through Boston Partners in Education. Mentorship has been one of the most grounding experiences in my life — and it reinforces why I care about building systems that expand access and opportunity.</p>
+    <h3>Performance Measures</h3>
+    <p>The simulation evaluates each scenario across four dimensions that capture both operator and rider perspectives:</p>
+    <table class="comp-table">
+      <thead>
+        <tr><th>Measure</th><th>What It Captures</th><th>Who It Serves</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Revenue per bike</td><td>Financial sustainability of fleet mix</td><td>Operator / City</td></tr>
+        <tr><td>Total ridership</td><td>Whether pricing changes suppress demand</td><td>Operator / Public</td></tr>
+        <tr><td>Price elasticity</td><td>How sensitive different rider segments are to price</td><td>Policy / Equity</td></tr>
+        <tr><td>Consumer surplus</td><td>Rider welfare impact of pricing changes</td><td>Public / Equity</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight c4">
+      <div class="insight-title c4">What This Tells Decision-Makers</div>
+      <p>Which rider segments are most price-sensitive. Where e-bikes add the most value relative to pedal bikes. And what pricing or fleet mix changes would improve system performance without eroding ridership or rider welfare. Instead of relying on system-wide averages, operators get segment-level behavioral insights with uncertainty quantification, letting them compare policy options with statistical rigor rather than intuition.</p>
+    </div>
+
+    <div class="relevance-box">
+      <h4>Direct Relevance to NYC DOT Bike Share Operations</h4>
+      <p><span class="highlight">This is the exact analytical workflow</span> a bike share program team needs: collecting real-time system data via API, cleaning and structuring it for analysis, building behavioral models that explain rider decisions, and simulating policy scenarios to compare outcomes before implementation.</p>
+      <p><span class="highlight">The GBFS API integration</span> demonstrates proficiency with the data infrastructure that powers Citi Bike operations, and the choice modeling framework extends naturally to questions about station siting, rebalancing strategies, and service area expansion decisions.</p>
+      <p><span class="highlight">The equity dimension</span> is built into the methodology: by measuring consumer surplus and price elasticity by rider segment, the analysis can flag when a pricing change would disproportionately affect lower-income riders or reduce access in underserved neighborhoods.</p>
+    </div>
   </div>
 </section>
 
