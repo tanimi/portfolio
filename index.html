@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanim Islam — Transportation Systems Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #1a1a2e;
+  --paper: #f5f0e8;
+  --accent: #c44b2b;
+  --accent2: #2b6cc4;
+  --accent3: #2b8c5a;
+  --muted: #7a7568;
+  --light: #e8e0d0;
+  --card: #fffcf5;
+  --shadow: rgba(26,26,46,0.08);
+  --serif: 'DM Serif Display', Georgia, serif;
+  --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--sans);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(245,240,232,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--light);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 2px 20px var(--shadow); }
+nav .nav-inner {
+  max-width: 1280px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0.75rem 2rem;
+}
+nav .logo {
+  font-family: var(--serif); font-size: 1.15rem;
+  color: var(--ink); text-decoration: none;
+  letter-spacing: -0.02em;
+}
+nav .logo span { color: var(--accent); }
+nav .nav-links { display: flex; gap: 0.25rem; }
+nav .nav-links a {
+  font-size: 0.82rem; font-weight: 500;
+  color: var(--muted); text-decoration: none;
+  padding: 0.5rem 0.85rem; border-radius: 6px;
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+nav .nav-links a:hover, nav .nav-links a.active {
+  color: var(--ink); background: var(--light);
+}
+
+/* ── SECTIONS ── */
+section { display: none; min-height: 100vh; padding-top: 4rem; }
+section.active { display: block; }
+
+/* ── HERO ── */
+.hero {
+  padding: 7rem 2rem 4rem;
+  max-width: 1000px; margin: 0 auto;
+}
+.hero-label {
+  font-family: var(--mono); font-size: 0.78rem;
+  color: var(--accent); letter-spacing: 0.12em;
+  text-transform: uppercase; margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-family: var(--serif); font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.15; letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.hero h1 em { color: var(--accent); font-style: italic; }
+.hero-sub {
+  font-size: 1.12rem; color: var(--muted);
+  max-width: 640px; line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+/* ── PROJECT CARDS ── */
+.project-grid {
+  max-width: 1100px; margin: 0 auto; padding: 0 2rem 4rem;
+  display: grid; gap: 1.5rem;
+}
+.project-card {
+  background: var(--card);
+  border: 1px solid var(--light);
+  border-radius: 14px;
+  padding: 2rem 2.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.project-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 4px; height: 100%;
+  transition: width 0.3s;
+}
+.project-card.c1::before { background: var(--accent); }
+.project-card.c2::before { background: var(--accent2); }
+.project-card.c3::before { background: var(--accent3); }
+.project-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px var(--shadow);
+}
+.project-card:hover::before { width: 6px; }
+.card-top {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; margin-bottom: 0.8rem;
+}
+.card-course {
+  font-family: var(--mono); font-size: 0.72rem;
+  color: var(--muted); letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.card-arrow {
+  width: 28px; height: 28px;
+  border: 1.5px solid var(--light);
+  border-radius: 50%; display: grid; place-items: center;
+  transition: all 0.3s; font-size: 0.85rem; color: var(--muted);
+}
+.project-card:hover .card-arrow {
+  border-color: var(--ink); color: var(--ink);
+  transform: translate(2px, -2px);
+}
+.card-title {
+  font-family: var(--serif); font-size: 1.5rem;
+  margin-bottom: 0.6rem; letter-spacing: -0.01em;
+}
+.card-desc {
+  font-size: 0.92rem; color: var(--muted);
+  line-height: 1.6; margin-bottom: 1rem;
+}
+.card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.tag {
+  font-family: var(--mono); font-size: 0.68rem;
+  padding: 0.25rem 0.6rem; border-radius: 4px;
+  background: var(--light); color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ── PROJECT DETAIL ── */
+.detail-page {
+  max-width: 860px; margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+.back-btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.85rem; color: var(--muted); text-decoration: none;
+  margin-bottom: 2rem; padding: 0.4rem 0;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s; cursor: pointer;
+}
+.back-btn:hover { color: var(--ink); border-color: var(--ink); }
+.detail-label {
+  font-family: var(--mono); font-size: 0.75rem;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+.detail-label.c1 { color: var(--accent); }
+.detail-label.c2 { color: var(--accent2); }
+.detail-label.c3 { color: var(--accent3); }
+.detail-page h2 {
+  font-family: var(--serif); font-size: 2.2rem;
+  line-height: 1.2; margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+.detail-page h3 {
+  font-family: var(--serif); font-size: 1.35rem;
+  margin: 2.5rem 0 0.8rem; letter-spacing: -0.01em;
+}
+.detail-page p {
+  font-size: 0.95rem; color: #3a3a3a;
+  line-height: 1.75; margin-bottom: 1rem;
+}
+
+/* Stat blocks */
+.stat-row {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem; margin: 1.5rem 0 2rem;
+}
+.stat-block {
+  background: var(--card);
+  border: 1px solid var(--light);
+  border-radius: 10px; padding: 1.2rem 1.4rem;
+}
+.stat-number {
+  font-family: var(--serif); font-size: 1.8rem;
+  line-height: 1.1; margin-bottom: 0.2rem;
+}
+.stat-number.c1 { color: var(--accent); }
+.stat-number.c2 { color: var(--accent2); }
+.stat-number.c3 { color: var(--accent3); }
+.stat-label {
+  font-size: 0.78rem; color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* Tech stack */
+.tech-stack {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin: 1rem 0 1.5rem;
+}
+.tech-tag {
+  font-family: var(--mono); font-size: 0.75rem;
+  padding: 0.35rem 0.75rem; border-radius: 6px;
+  border: 1.5px solid; font-weight: 500;
+}
+.tech-tag.c1 { border-color: var(--accent); color: var(--accent); }
+.tech-tag.c2 { border-color: var(--accent2); color: var(--accent2); }
+.tech-tag.c3 { border-color: var(--accent3); color: var(--accent3); }
+
+/* Interactive charts */
+.chart-container {
+  background: var(--card);
+  border: 1px solid var(--light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+.chart-title {
+  font-family: var(--mono); font-size: 0.72rem;
+  color: var(--muted); text-transform: uppercase;
+  letter-spacing: 0.08em; margin-bottom: 1rem;
+}
+canvas { width: 100% !important; height: auto !important; }
+
+/* Insight callout */
+.insight {
+  border-left: 3px solid;
+  padding: 1rem 1.2rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+  background: var(--card);
+}
+.insight.c1 { border-color: var(--accent); }
+.insight.c2 { border-color: var(--accent2); }
+.insight.c3 { border-color: var(--accent3); }
+.insight-title {
+  font-weight: 600; font-size: 0.85rem;
+  margin-bottom: 0.3rem; text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.insight-title.c1 { color: var(--accent); }
+.insight-title.c2 { color: var(--accent2); }
+.insight-title.c3 { color: var(--accent3); }
+.insight p {
+  font-size: 0.9rem; margin: 0;
+}
+
+/* Code snippet */
+.code-block {
+  background: #1a1a2e; color: #e0ddd5;
+  border-radius: 10px; padding: 1.2rem 1.5rem;
+  margin: 1rem 0 1.5rem;
+  font-family: var(--mono); font-size: 0.78rem;
+  line-height: 1.8; overflow-x: auto;
+}
+.code-comment { color: #6a6a80; }
+.code-keyword { color: #c44b2b; }
+.code-string { color: #2b8c5a; }
+.code-func { color: #2b6cc4; }
+
+/* Tab controls for interactive elements */
+.tab-controls {
+  display: flex; gap: 0.3rem; margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  font-family: var(--mono); font-size: 0.72rem;
+  padding: 0.4rem 0.8rem; border-radius: 6px;
+  border: 1.5px solid var(--light);
+  background: transparent; color: var(--muted);
+  cursor: pointer; transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.tab-btn.active, .tab-btn:hover {
+  background: var(--ink); color: var(--paper);
+  border-color: var(--ink);
+}
+
+/* Comparison table */
+.comp-table {
+  width: 100%; border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.88rem;
+}
+.comp-table th {
+  font-family: var(--mono); font-size: 0.72rem;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  color: var(--muted); padding: 0.6rem 0.8rem;
+  text-align: left; border-bottom: 2px solid var(--light);
+  font-weight: 500;
+}
+.comp-table td {
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--light);
+}
+.comp-table tr:hover td { background: rgba(232,224,208,0.3); }
+.delta-positive { color: var(--accent3); font-weight: 600; }
+.delta-negative { color: var(--accent); font-weight: 600; }
+
+/* ── ABOUT PAGE ── */
+.about-page {
+  max-width: 860px; margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+.about-header {
+  margin-bottom: 3rem;
+}
+.about-header h2 {
+  font-family: var(--serif); font-size: 2.4rem;
+  margin-bottom: 0.6rem; letter-spacing: -0.02em;
+}
+.about-header p {
+  font-size: 1.05rem; color: var(--muted); line-height: 1.7;
+}
+.timeline {
+  position: relative;
+  padding-left: 2rem;
+  margin: 2rem 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute; left: 6px; top: 0; bottom: 0;
+  width: 2px; background: var(--light);
+}
+.timeline-item {
+  position: relative; margin-bottom: 1.8rem;
+  padding-bottom: 0.5rem;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute; left: -2rem; top: 6px;
+  width: 10px; height: 10px;
+  border-radius: 50%; background: var(--accent);
+  border: 2px solid var(--paper);
+}
+.timeline-item .tl-date {
+  font-family: var(--mono); font-size: 0.72rem;
+  color: var(--muted); letter-spacing: 0.06em;
+  text-transform: uppercase; margin-bottom: 0.2rem;
+}
+.timeline-item .tl-title {
+  font-weight: 600; font-size: 1rem; margin-bottom: 0.1rem;
+}
+.timeline-item .tl-company {
+  font-size: 0.88rem; color: var(--accent); margin-bottom: 0.3rem;
+}
+.timeline-item .tl-desc {
+  font-size: 0.88rem; color: var(--muted); line-height: 1.6;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.2rem; margin: 2rem 0;
+}
+.value-card {
+  background: var(--card);
+  border: 1px solid var(--light);
+  border-radius: 12px; padding: 1.5rem;
+}
+.value-icon {
+  font-size: 1.5rem; margin-bottom: 0.6rem;
+}
+.value-card h4 {
+  font-family: var(--serif); font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+.value-card p {
+  font-size: 0.85rem; color: var(--muted); line-height: 1.6;
+}
+
+.proficiency-list {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin: 1rem 0 2rem;
+}
+.prof-tag {
+  font-family: var(--mono); font-size: 0.72rem;
+  padding: 0.3rem 0.65rem; border-radius: 5px;
+  background: var(--ink); color: var(--paper);
+}
+
+/* ── RELEVANCE SECTION ── */
+.relevance-box {
+  background: linear-gradient(135deg, #1a1a2e 0%, #2a2a4e 100%);
+  color: var(--paper); border-radius: 14px;
+  padding: 2rem 2.2rem; margin: 2rem 0;
+}
+.relevance-box h4 {
+  font-family: var(--serif); font-size: 1.25rem;
+  margin-bottom: 0.8rem;
+}
+.relevance-box p {
+  font-size: 0.9rem; color: #c0bdb5;
+  line-height: 1.7; margin-bottom: 0.5rem;
+}
+.relevance-box .highlight {
+  color: #ffd166; font-weight: 600;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.78rem;
+  color: var(--muted);
+  border-top: 1px solid var(--light);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  nav .nav-inner { padding: 0.6rem 1rem; }
+  nav .nav-links a { font-size: 0.72rem; padding: 0.4rem 0.5rem; }
+  .hero { padding: 5rem 1.2rem 2rem; }
+  .project-grid { padding: 0 1.2rem 3rem; }
+  .project-card { padding: 1.4rem; }
+  .detail-page, .about-page { padding: 2rem 1.2rem 4rem; }
+  .stat-row { grid-template-columns: 1fr 1fr; }
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0; transform: translateY(16px);
+  animation: fadeUp 0.5s ease forwards;
+}
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="logo" onclick="showSection('home')">Tanim<span>.</span></a>
+    <div class="nav-links">
+      <a href="#" onclick="showSection('home')" id="nav-home" class="active">Projects</a>
+      <a href="#" onclick="showSection('project1')" id="nav-project1">Deep Learning</a>
+      <a href="#" onclick="showSection('project2')" id="nav-project2">Travel Demand</a>
+      <a href="#" onclick="showSection('project3')" id="nav-project3">Bus Optimization</a>
+      <a href="#" onclick="showSection('about')" id="nav-about">About</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!--  HOME / PROJECT OVERVIEW                            -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="home" class="active">
+  <div class="hero">
+    <div class="hero-label fade-in">NYU Tandon — M.S. Transportation Systems</div>
+    <h1 class="fade-in delay-1">Data-driven solutions for <em>urban mobility</em></h1>
+    <p class="hero-sub fade-in delay-2">Three graduate research projects applying machine learning, operations research, and discrete choice modeling to real-world transportation challenges — from predicting traffic incidents to optimizing NYC bus routes.</p>
+  </div>
+
+  <div class="project-grid">
+    <div class="project-card c1 fade-in delay-2" onclick="showSection('project1')">
+      <div class="card-top">
+        <span class="card-course">Engineering Applications of Deep Learning</span>
+        <span class="card-arrow">↗</span>
+      </div>
+      <h3 class="card-title">Traffic Incident Duration Prediction</h3>
+      <p class="card-desc">Combining XGBoost with LSTM text embeddings from operator notes to predict crash clearance times — achieving R² = 0.82 on 140,000 Virginia incidents.</p>
+      <div class="card-tags">
+        <span class="tag">PyTorch</span>
+        <span class="tag">XGBoost</span>
+        <span class="tag">LSTM</span>
+        <span class="tag">NLP</span>
+        <span class="tag">140K incidents</span>
+      </div>
+    </div>
+
+    <div class="project-card c2 fade-in delay-3" onclick="showSection('project2')">
+      <div class="card-top">
+        <span class="card-course">Forecasting Urban Travel Demand</span>
+        <span class="card-arrow">↗</span>
+      </div>
+      <h3 class="card-title">From Uber to Autonomous Ride-Hailing</h3>
+      <p class="card-desc">Tracking how TNCs reshaped NYC mode choice from 2009–2022 using multinomial logit models to project autonomous vehicle adoption patterns.</p>
+      <div class="card-tags">
+        <span class="tag">Multinomial Logit</span>
+        <span class="tag">NHTS Data</span>
+        <span class="tag">Linear Regression</span>
+        <span class="tag">pylogit</span>
+      </div>
+    </div>
+
+    <div class="project-card c3 fade-in delay-4" onclick="showSection('project3')">
+      <div class="card-top">
+        <span class="card-course">Urban Transportation & Logistics</span>
+        <span class="card-arrow">↗</span>
+      </div>
+      <h3 class="card-title">MTA B43 Bus Route Optimization</h3>
+      <p class="card-desc">Two-stage optimization framework combining binary integer programming for stop consolidation with minimum cost flow for vehicle scheduling — $970K Year 1 potential benefit.</p>
+      <div class="card-tags">
+        <span class="tag">Gurobi</span>
+        <span class="tag">Integer Programming</span>
+        <span class="tag">Network Flow</span>
+        <span class="tag">GTFS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!--  PROJECT 1: DEEP LEARNING INCIDENT PREDICTION       -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="project1">
+  <div class="detail-page">
+    <a class="back-btn" onclick="showSection('home')">← All Projects</a>
+    <div class="detail-label c1">Engineering Applications of Deep Learning</div>
+    <h2>Predicting Traffic Incident Duration Using ML + LSTM Text Embeddings</h2>
+    <p>Traffic incidents are the leading source of non-recurring congestion in the United States. When a crash happens, traffic management centers need to know how long it will take to clear — to allocate responders, reroute traffic, and update navigation systems. But predicting clearance time is notoriously difficult because it depends on severity, location, weather, and response logistics, much of which is captured only in free-text operator notes that traditional models ignore.</p>
+
+    <h3>Why This Matters for Agencies</h3>
+    <div class="relevance-box">
+      <h4>The Problem Agencies Face</h4>
+      <p>Traffic management centers currently rely on <span class="highlight">average historical clearance times</span> to plan response. A "Vehicle Accident" might take 15 minutes or 3 hours — but the categorical label alone can't distinguish between a fender-bender and a multi-vehicle pileup with hazmat.</p>
+      <p>This research demonstrates that <span class="highlight">operator notes already contain the signal</span> needed for far better predictions. Agencies don't need new sensors or data collection — they need better models applied to the data they already generate.</p>
+    </div>
+
+    <h3>Key Results</h3>
+    <div class="stat-row">
+      <div class="stat-block">
+        <div class="stat-number c1">R² = 0.82</div>
+        <div class="stat-label">Combined model accuracy (XGBoost + LSTM)</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number c1">+17%</div>
+        <div class="stat-label">Improvement from adding text embeddings</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number c1">140,173</div>
+        <div class="stat-label">Virginia traffic incidents analyzed</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number c1">64-dim</div>
+        <div class="stat-label">LSTM embedding captures text signal</div>
+      </div>
+    </div>
+
+    <h3>Technical Approach</h3>
+    <p>The pipeline has two stages. First, 326 structured features (temporal, incident type, location, severity, response agencies) are extracted from VDOT incident records and one-hot encoded. Second, an LSTM neural network processes the free-text operator notes — learning to map incident descriptions into a compact 64-dimensional embedding that captures severity nuance lost in categorical codes.</p>
+
+    <div class="tech-stack">
+      <span class="tech-tag c1">PyTorch</span>
+      <span class="tech-tag c1">XGBoost</span>
+      <span class="tech-tag c1">scikit-learn</span>
+      <span class="tech-tag c1">pandas</span>
+      <span class="tech-tag c1">LSTM</span>
+      <span class="tech-tag c1">Random Forest</span>
+      <span class="tech-tag c1">Ridge Regression</span>
+      <span class="tech-tag c1">MLP</span>
+    </div>
+
+    <div class="code-block">
+<span class="code-comment"># LSTM architecture for text embedding extraction</span>
+<span class="code-keyword">class</span> <span class="code-func">IncidentLSTM</span>(nn.Module):
+    <span class="code-keyword">def</span> __init__(self, vocab_size, embed_dim=<span class="code-string">100</span>, hidden_dim=<span class="code-string">64</span>):
+        self.embedding = nn.Embedding(vocab_size, embed_dim)
+        self.lstm = nn.LSTM(embed_dim, hidden_dim, batch_first=True)
+        self.fc = nn.Linear(hidden_dim, <span class="code-string">1</span>)
+    
+<span class="code-comment"># After training 500 epochs → extract hidden state as embedding</span>
+embeddings = model.lstm(embedded_text)[<span class="code-string">1</span>][<span class="code-string">0</span>]  <span class="code-comment"># 64-dim per incident</span>
+<span class="code-comment"># Concatenate with 326 structured features → 390 total features</span>
+    </div>
+
+    <h3>Model Comparison</h3>
+    <div class="chart-container">
+      <div class="chart-title">R² Performance: Baseline vs. Combined (Baseline + LSTM Embeddings)</div>
+      <div class="tab-controls">
+        <button class="tab-btn active" onclick="toggleP1Chart('combined')">Combined vs Baseline</button>
+        <button class="tab-btn" onclick="toggleP1Chart('improvement')">% Improvement</button>
+      </div>
+      <canvas id="p1Chart" height="280"></canvas>
+    </div>
+
+    <div class="insight c1">
+      <div class="insight-title c1">Key Finding</div>
+      <p>LSTM embeddings alone (64 features, R² = 0.65) slightly outperformed all 326 structured features (R² = 0.63) when tested with Ridge Regression — meaning the text descriptions contain predictive information not encoded in any categorical field. An operator writing "overturned tractor trailer blocking all lanes" tells the model far more than a label reading "Vehicle Accident."</p>
+    </div>
+
+    <h3>What the Embeddings Capture</h3>
+    <p>The LSTM learns to map textual patterns into a continuous vector space. Terse two-line notes signal something different from detailed paragraphs documenting multi-agency coordination. The word choices operators use likely reflect an implicit severity assessment — and the model picks up on this, learning that certain phrases or levels of detail correlate with longer durations even when we can't easily articulate what those patterns are.</p>
+
+    <div class="relevance-box">
+      <h4>Implementation Path for Agencies</h4>
+      <p><span class="highlight">Low barrier to adoption.</span> This approach doesn't require new sensors or data collection — it works on data traffic management centers already produce. Agencies could deploy this model to provide real-time duration estimates the moment an incident is logged, improving resource allocation, traveler information accuracy, and downstream congestion management.</p>
+      <p>Future improvements: integrating <span class="highlight">weather data</span>, exploring <span class="highlight">BERT-based embeddings</span> for richer text representations, and building interpretability tools so managers understand which phrases drive predictions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!--  PROJECT 2: TRAVEL DEMAND FORECASTING               -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="project2">
+  <div class="detail-page">
+    <a class="back-btn" onclick="showSection('home')">← All Projects</a>
+    <div class="detail-label c2">Forecasting Urban Travel Demand</div>
+    <h2>From Uber to Autonomous Ride-Hailing — Analyzing NYC Transportation Disruption</h2>
+    <p>As autonomous vehicles move from pilot programs to commercial deployment, transportation planners need empirical frameworks for anticipating how this next disruption will reshape urban systems. This study uses the TNC (Uber/Lyft) disruption as a natural experiment — tracking how ride-hailing reshaped trip generation and mode choice in New York City from 2009 to 2022 to project what robotaxis might do next.</p>
+
+    <h3>Why This Matters for Cities</h3>
+    <div class="relevance-box">
+      <h4>The Planning Challenge</h4>
+      <p>Cities are making <span class="highlight">billion-dollar infrastructure decisions today</span> based on travel demand forecasts that may not account for how autonomous mobility services will reshape behavior. Should transit agencies invest in more fixed-route capacity, or pivot toward flexible last-mile connections? Will robotaxis cannibalize transit ridership or feed it?</p>
+      <p>This research provides <span class="highlight">empirical evidence from the TNC disruption</span> — the closest historical analogue to what's coming — showing that income barriers fall fast through service-based models, age barriers persist, and transit faces selective vulnerability depending on trip purpose.</p>
+    </div>
+
+    <h3>Key Results</h3>
+    <div class="stat-row">
+      <div class="stat-block">
+        <div class="stat-number c2">95%</div>
+        <div class="stat-label">Drop in income effect on TNC choice for work trips (5 years)</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number c2">ρ² ≈ 0.54</div>
+        <div class="stat-label">Mode choice model fit (strong for discrete choice)</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number c2">−5.41</div>
+        <div class="stat-label">Taxi ASC decline for work trips (preference collapse)</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number c2">3 eras</div>
+        <div class="stat-label">Pre-ridehail → TNC growth → Mature market</div>
+      </div>
+    </div>
+
+    <h3>Two-Part Methodology</h3>
+    <p><strong>Trip Generation</strong> used linear regression on NHTS survey data (2009, 2017, 2022) filtered to the NYC metro area, predicting household trip counts from household size, income, vehicle ownership, workers, drivers, population density, and life cycle stage. By comparing coefficients across survey years, the study tracked how ride-share changed the factors driving trip-making.</p>
+    <p><strong>Mode Choice</strong> used multinomial logit models on NYC Citywide Mobility Survey data (2017, 2019, 2022) with six alternatives (auto, transit, taxi, TNC, walk, bike) and three explanatory variables (income, trip distance, age) to capture how preference for each mode evolved as TNCs matured.</p>
+
+    <div class="tech-stack">
+      <span class="tech-tag c2">pylogit</span>
+      <span class="tech-tag c2">pandas</span>
+      <span class="tech-tag c2">scikit-learn</span>
+      <span class="tech-tag c2">seaborn</span>
+      <span class="tech-tag c2">numpy</span>
+      <span class="tech-tag c2">matplotlib</span>
+      <span class="tech-tag c2">Multinomial Logit</span>
+      <span class="tech-tag c2">Linear Regression</span>
+    </div>
+
+    <h3>Income Democratization of TNCs</h3>
+    <div class="chart-container">
+      <div class="chart-title">TNC Income Coefficient for Work Trips (β → 0 means income-neutral)</div>
+      <canvas id="p2ChartIncome" height="240"></canvas>
+    </div>
+
+    <div class="insight c2">
+      <div class="insight-title c2">Key Finding — Rapid Income Democratization</div>
+      <p>The income coefficient for TNC work trips dropped from β = 0.93 in 2017 to β = 0.05 in 2022 — a 95% reduction in just five years. TNCs transformed from a luxury service to an income-neutral commuting option far faster than the 14–22 year vehicle ownership diffusion cycles assumed in AV literature. Robotaxi services would likely follow the same rapid pattern.</p>
+    </div>
+
+    <h3>Mode Preference Evolution (ASCs)</h3>
+    <div class="chart-container">
+      <div class="chart-title">Alternative-Specific Constants by Mode (Non-Work Trips, relative to auto)</div>
+      <div class="tab-controls">
+        <button class="tab-btn active" onclick="toggleP2Chart('nonwork')">Non-Work Trips</button>
+        <button class="tab-btn" onclick="toggleP2Chart('work')">Work Trips</button>
+      </div>
+      <canvas id="p2ChartASC" height="280"></canvas>
+    </div>
+
+    <h3>Trip Generation Coefficient Changes</h3>
+    <div class="chart-container">
+      <div class="chart-title">Linear Regression Coefficients Across Survey Years</div>
+      <canvas id="p2ChartTrip" height="260"></canvas>
+    </div>
+
+    <div class="insight c2">
+      <div class="insight-title c2">Key Finding — Age Barriers Persist</div>
+      <p>Unlike income effects which democratized rapidly, TNC age coefficients remained negative and actually strengthened over time (β = −0.33 → −0.70 for non-work trips). Older travelers' resistance reflects fundamental preferences for human-operated services, not unfamiliarity that exposure resolves. This has direct implications: the populations most cited as potential AV beneficiaries (elderly non-drivers) express the most resistance to driverless technology.</p>
+    </div>
+
+    <div class="relevance-box">
+      <h4>Recommendations for Policymakers</h4>
+      <p><span class="highlight">Robotaxi income barriers will fall fast</span> — agencies should plan for rapid cross-income adoption when services launch, not the slow 15+ year diffusion of car ownership.</p>
+      <p><span class="highlight">Transit faces selective vulnerability</span> — work commuting is under pressure (ASC declined 1.6 units), but non-work transit shows resilience. Agencies should focus improvements on the commute market and explore AV partnerships for first/last-mile rather than end-to-end competition.</p>
+      <p><span class="highlight">Hybrid deployment strategies</span> with human presence (e.g., one operator monitoring multiple vehicles) can bridge the age acceptance gap — 66% acceptance with a human onboard vs. just 13% without.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!--  PROJECT 3: B43 BUS OPTIMIZATION                    -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="project3">
+  <div class="detail-page">
+    <a class="back-btn" onclick="showSection('home')">← All Projects</a>
+    <div class="detail-label c3">Urban Transportation & Logistics Systems</div>
+    <h2>MTA B43 Route Analysis — Stop & Schedule Optimization</h2>
+    <p>New York City's bus network serves 1.1 million daily riders — disproportionately lower-income residents and people with disabilities in outer-borough transit deserts. Yet ridership has been in freefall for two decades, dropping from 2 million daily in 2002 to roughly half today. The B43, connecting Greenpoint to Lefferts Gardens across 6.5 miles of Brooklyn, averages just 6.5 MPH — slower than cycling and barely faster than a brisk walk — with stops spaced only ~200m apart versus the 400–800m industry recommendation.</p>
+
+    <h3>Why This Matters for Transit Agencies</h3>
+    <div class="relevance-box">
+      <h4>The Opportunity</h4>
+      <p>Stop consolidation is a <span class="highlight">low-cost, high-impact lever</span> that agencies can deploy without new legislation, capital construction, or interagency coordination. The B43 already underwent consolidation in MTA's Brooklyn network redesign, yet performance remains poor — this analysis shows <span class="highlight">further optimization is both possible and quantifiable</span>.</p>
+      <p>The methodology is <span class="highlight">directly transferable</span> to any route in any city. The two-stage framework (stop optimization → schedule optimization) captures the linkage between route-level decisions and system-level outcomes that single-stage approaches miss.</p>
+    </div>
+
+    <h3>Key Results</h3>
+    <div class="stat-row">
+      <div class="stat-block">
+        <div class="stat-number c3">$970K</div>
+        <div class="stat-label">Year 1 total benefit (operating + capital avoidance)</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number c3">−32%</div>
+        <div class="stat-label">Reduction in total stops (103 → 70)</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number c3">−4.4 min</div>
+        <div class="stat-label">Round-trip cycle time saved</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-number c3">$120K/yr</div>
+        <div class="stat-label">Ongoing annual operating savings</div>
+      </div>
+    </div>
+
+    <h3>Two-Stage Optimization Framework</h3>
+    <p><strong>Stage 1 — Stop Consolidation</strong> uses stochastic binary integer programming (via Gurobi) to determine which stops to retain. The objective minimizes total passenger cost: in-vehicle time cost for all riders plus walking penalty costs for displaced riders at removed stops. Ten ridership scenarios were generated using triangular distributions (±25% of base) to ensure the solution is robust to demand uncertainty.</p>
+    <p><strong>Stage 2 — Vehicle Scheduling</strong> applies minimum cost network flow to assign buses to trips given the reduced cycle times. For each pair of trips, the model evaluates whether a single bus can serve both in sequence, then finds the minimum-cost assignment covering all trips.</p>
+
+    <div class="tech-stack">
+      <span class="tech-tag c3">Gurobi</span>
+      <span class="tech-tag c3">gurobipy</span>
+      <span class="tech-tag c3">pandas</span>
+      <span class="tech-tag c3">GTFS</span>
+      <span class="tech-tag c3">MATSim</span>
+      <span class="tech-tag c3">Binary Integer Programming</span>
+      <span class="tech-tag c3">Min Cost Flow</span>
+      <span class="tech-tag c3">configparser</span>
+    </div>
+
+    <div class="code-block">
+<span class="code-comment"># Binary Integer Program for stop consolidation</span>
+m = gp.<span class="code-func">Model</span>(<span class="code-string">"B43_Stop_Optimization"</span>)
+x = m.<span class="code-func">addVars</span>(n_stops, vtype=GRB.BINARY, name=<span class="code-string">"x"</span>)
+
+<span class="code-comment"># Minimize: in-vehicle time cost + walking penalty cost</span>
+in_vehicle = C_IVT * P * (T_base + <span class="code-func">quicksum</span>(dwell[i] * x[i] <span class="code-keyword">for</span> i <span class="code-keyword">in</span> S))
+walk_penalty = C_walk * <span class="code-func">quicksum</span>(R[i] * W[i] * (<span class="code-string">1</span> - x[i]) <span class="code-keyword">for</span> i <span class="code-keyword">in</span> S)
+m.<span class="code-func">setObjective</span>(in_vehicle + walk_penalty, GRB.MINIMIZE)
+
+<span class="code-comment"># Constraints: terminal stops retained, no consecutive removals,</span>
+<span class="code-comment"># min 35 stops, max walking distance</span>
+    </div>
+
+    <h3>Stop Consolidation Results</h3>
+    <div class="chart-container">
+      <div class="chart-title">Before vs. After Stop Consolidation</div>
+      <div class="tab-controls">
+        <button class="tab-btn active" onclick="toggleP3Chart('stops')">Stop Count</button>
+        <button class="tab-btn" onclick="toggleP3Chart('time')">Travel Time</button>
+        <button class="tab-btn" onclick="toggleP3Chart('spacing')">Stop Spacing</button>
+      </div>
+      <canvas id="p3Chart" height="260"></canvas>
+    </div>
+
+    <h3>Vehicle Scheduling Impact</h3>
+    <table class="comp-table">
+      <thead>
+        <tr><th>Metric</th><th>Weekday</th><th>Saturday</th><th>Sunday</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Scheduled Trips</td><td>186</td><td>149</td><td>125</td></tr>
+        <tr><td>Fleet (Before)</td><td>18</td><td>14</td><td>9</td></tr>
+        <tr><td>Fleet (After)</td><td>18</td><td>14</td><td class="delta-positive">8 (−1)</td></tr>
+        <tr><td>Daily Cost (Before)</td><td>$6,932</td><td>$5,592</td><td>$3,825</td></tr>
+        <tr><td>Daily Cost (After)</td><td>$6,653</td><td>$5,313</td><td>$3,193</td></tr>
+        <tr><td>Daily Savings</td><td class="delta-positive">$279</td><td class="delta-positive">$279</td><td class="delta-positive">$632</td></tr>
+        <tr><td>Annual Savings</td><td class="delta-positive">$72,732</td><td class="delta-positive">$14,491</td><td class="delta-positive">$32,864</td></tr>
+      </tbody>
+    </table>
+
+    <div class="insight c3">
+      <div class="insight-title c3">Key Finding — Non-Linear Relationship</div>
+      <p>The relationship between travel time reduction and fleet requirements is non-linear and depends on demand patterns. Weekday/Saturday schedules are "fleet-constrained" by peak-hour pinch points — even with faster trips, you still need the same number of simultaneous buses during rush hour. Sunday's flatter demand profile allowed the time savings to actually eliminate a bus. This means stop consolidation delivers its greatest fleet benefits during off-peak periods.</p>
+    </div>
+
+    <h3>Cost-Benefit Summary</h3>
+    <div class="chart-container">
+      <div class="chart-title">Annual Savings Breakdown + Capital Avoidance</div>
+      <canvas id="p3ChartCost" height="240"></canvas>
+    </div>
+
+    <div class="relevance-box">
+      <h4>Recommendations & Transferability</h4>
+      <p><span class="highlight">Hybrid implementation strategy:</span> Reinvest weekday/Saturday savings into ~3% more trips (higher ridership periods) while capturing Sunday fleet reduction for cost savings. This balances fiscal responsibility with ridership growth objectives.</p>
+      <p><span class="highlight">Force multiplier:</span> Stop consolidation amplifies the benefits of dedicated bus lanes, transit signal priority, and all-door boarding (OMNY). Each intervention makes the others more effective — coordinated deployment yields benefits greater than the sum of parts.</p>
+      <p><span class="highlight">The methodology scales:</span> Brooklyn's bus network inherited stop patterns from the streetcar era. This framework is directly transferable to similar routes across any agency's network, offering a systematic approach to network-wide service improvement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!--  ABOUT PAGE                                         -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="about">
+  <div class="about-page">
+    <div class="about-header">
+      <div class="hero-label fade-in">About</div>
+      <h2 class="fade-in delay-1">Tanim Islam</h2>
+      <p class="fade-in delay-2">Transportation systems graduate student with industry experience deploying autonomous vehicles and scaling robotic hardware. Bridging technical depth with practical implementation to build mobility systems that serve everyone.</p>
+    </div>
+
+    <h3>What I Care About</h3>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🚍</div>
+        <h4>Equitable Mobility</h4>
+        <p>Public transportation isn't just infrastructure — it's a crucial connector that empowers individuals and builds community. Growing up between two cultures showed me that transit bridges divides when it works well.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🤖</div>
+        <h4>Technology as Equalizer</h4>
+        <p>Automation and shared mobility should expand access rather than create parallel premium-only services. I develop frameworks that help communities implement these technologies to strengthen, not replace, existing transit.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔬</div>
+        <h4>Data-Driven Decisions</h4>
+        <p>From deploying AVs in rural Minnesota to optimizing Brooklyn bus routes, I believe quantitative methods should inform how we build and operate transit — making the case for investment with evidence, not intuition.</p>
+      </div>
+    </div>
+
+    <h3>Professional Journey</h3>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="tl-date">Sep 2025 — May 2027</div>
+        <div class="tl-title">M.S. Transportation Systems</div>
+        <div class="tl-company">NYU Tandon School of Engineering</div>
+        <div class="tl-desc">Deep learning, travel demand forecasting, operations research, and urban logistics. Applying ML and optimization to real transit challenges in NYC.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">Apr 2022 — Feb 2025</div>
+        <div class="tl-title">Technical Product Manager</div>
+        <div class="tl-company">Formant</div>
+        <div class="tl-desc">Consulted robotics companies of all sizes in scaling their technical and operational processes. Led product development for teleoperation and real-time fleet management offerings.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">Nov 2020 — Mar 2022</div>
+        <div class="tl-title">Sr. Field Autonomy Engineer</div>
+        <div class="tl-company">May Mobility</div>
+        <div class="tl-desc">Led goMARTI — one of the first rural AV deployments in the US. 10,000+ successful trips, 98% rider satisfaction. Consulted pre-sales and optimized route selection with community leaders and stakeholders.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">Aug 2019 — Sep 2020</div>
+        <div class="tl-title">LabVIEW Software Developer</div>
+        <div class="tl-company">Fresh Consulting</div>
+        <div class="tl-desc">Software lead for complete project cycles delivering solutions for Fortune 500 tech companies, from planning through verification and validation.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">Jun 2018 — Jun 2019</div>
+        <div class="tl-title">Test & Validation Engineer</div>
+        <div class="tl-company">Vesper Technologies</div>
+        <div class="tl-desc">Cross-functional engineer working on novel MEMS microphone technology. Minimized downtime, increased throughput, and led process transfer from Boston to overseas facility.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">Aug 2016 — Jun 2018</div>
+        <div class="tl-title">Application Engineer</div>
+        <div class="tl-company">National Instruments</div>
+        <div class="tl-desc">Customer-facing engineer providing pre-sales solutions and post-sales success on technical HW/SW systems. 99% satisfaction rate, 90% engagement rate for system architecture consulting.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-date">Aug 2012 — May 2016</div>
+        <div class="tl-title">B.S.E. Mechanical Engineering</div>
+        <div class="tl-company">University of Michigan, Ann Arbor</div>
+        <div class="tl-desc"></div>
+      </div>
+    </div>
+
+    <h3>Technical Proficiencies</h3>
+    <div class="proficiency-list">
+      <span class="prof-tag">Python</span>
+      <span class="prof-tag">pandas</span>
+      <span class="prof-tag">scikit-learn</span>
+      <span class="prof-tag">PyTorch</span>
+      <span class="prof-tag">XGBoost</span>
+      <span class="prof-tag">Gurobi</span>
+      <span class="prof-tag">ArcGIS</span>
+      <span class="prof-tag">SQL</span>
+      <span class="prof-tag">ROS</span>
+      <span class="prof-tag">MATLAB</span>
+      <span class="prof-tag">LabVIEW (CLD)</span>
+      <span class="prof-tag">TestStand (CTD)</span>
+      <span class="prof-tag">C++ (limited)</span>
+      <span class="prof-tag">SolidWorks</span>
+      <span class="prof-tag">GTFS</span>
+      <span class="prof-tag">NI DAQ Systems</span>
+    </div>
+
+    <h3>Community</h3>
+    <p>Outside of work and school, I've been a <strong>Big Brother</strong> through Big Brothers Big Sisters of Central Texas, and a <strong>Student Mentor Volunteer</strong> through Boston Partners in Education. Mentorship has been one of the most grounding experiences in my life — and it reinforces why I care about building systems that expand access and opportunity.</p>
+  </div>
+</section>
+
+<footer>
+  Tanim Islam — NYU Tandon School of Engineering — M.S. Transportation Systems — 2025–2027
+</footer>
+
+<!-- Chart.js CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+// ── NAVIGATION ──
+function showSection(id) {
+  document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const navLink = document.getElementById('nav-' + id);
+  if (navLink) navLink.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  // Re-render charts if needed
+  setTimeout(() => {
+    if (id === 'project1') renderP1Chart('combined');
+    if (id === 'project2') { renderP2Income(); renderP2ASC('nonwork'); renderP2Trip(); }
+    if (id === 'project3') { renderP3Chart('stops'); renderP3Cost(); }
+  }, 100);
+}
+
+// Scroll shadow on nav
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// ── CHART COLORS ──
+const C = {
+  red: '#c44b2b', redLight: 'rgba(196,75,43,0.15)',
+  blue: '#2b6cc4', blueLight: 'rgba(43,108,196,0.15)',
+  green: '#2b8c5a', greenLight: 'rgba(43,140,90,0.15)',
+  ink: '#1a1a2e', muted: '#7a7568', light: '#e8e0d0',
+  paper: '#f5f0e8'
+};
+const chartFont = { family: "'IBM Plex Sans', sans-serif", size: 12, weight: '400' };
+const monoFont = { family: "'IBM Plex Mono', monospace", size: 10 };
+Chart.defaults.font = chartFont;
+Chart.defaults.color = C.muted;
+
+// ════════════════════════════
+// PROJECT 1 CHARTS
+// ════════════════════════════
+let p1ChartInst = null;
+function renderP1Chart(mode) {
+  if (p1ChartInst) p1ChartInst.destroy();
+  const ctx = document.getElementById('p1Chart').getContext('2d');
+  const models = ['XGB Tuned','XGB Shallow','XGB Deep','Random Forest','Grad Boost','XGB Default','MLP Small','Ridge','MLP Medium'];
+  const baseline = [0.700,0.697,0.695,0.695,0.689,0.686,0.658,0.633,0.608];
+  const combined = [0.822,0.816,0.817,0.794,0.817,0.806,0.775,0.729,0.725];
+  const improvement = combined.map((v,i) => ((v - baseline[i]) / baseline[i] * 100).toFixed(1));
+
+  if (mode === 'combined') {
+    p1ChartInst = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: models,
+        datasets: [
+          { label: 'Baseline (326 features)', data: baseline, backgroundColor: C.redLight, borderColor: C.red, borderWidth: 1.5, borderRadius: 4 },
+          { label: 'With LSTM Embeddings (390)', data: combined, backgroundColor: C.red, borderColor: C.red, borderWidth: 0, borderRadius: 4 }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { position: 'top', labels: { font: monoFont, boxWidth: 12, padding: 16 } } },
+        scales: {
+          y: { min: 0.5, max: 0.9, grid: { color: C.light }, ticks: { font: monoFont } },
+          x: { grid: { display: false }, ticks: { font: monoFont, maxRotation: 45 } }
+        }
+      }
+    });
+  } else {
+    p1ChartInst = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: models,
+        datasets: [{ label: '% Improvement from LSTM', data: improvement, backgroundColor: C.red, borderRadius: 4 }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+          y: { grid: { color: C.light }, ticks: { font: monoFont, callback: v => v + '%' } },
+          x: { grid: { display: false }, ticks: { font: monoFont, maxRotation: 45 } }
+        }
+      }
+    });
+  }
+}
+function toggleP1Chart(mode) {
+  document.querySelectorAll('#project1 .tab-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderP1Chart(mode);
+}
+
+// ════════════════════════════
+// PROJECT 2 CHARTS
+// ════════════════════════════
+let p2IncomeChart = null, p2ASCChart = null, p2TripChart = null;
+
+function renderP2Income() {
+  if (p2IncomeChart) p2IncomeChart.destroy();
+  const ctx = document.getElementById('p2ChartIncome').getContext('2d');
+  p2IncomeChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2017','2019','2022'],
+      datasets: [
+        { label: 'Work Trips', data: [0.93, 0.48, 0.05], borderColor: C.blue, backgroundColor: C.blueLight, fill: true, tension: 0.3, pointRadius: 6, pointBackgroundColor: C.blue, borderWidth: 2.5 },
+        { label: 'Non-Work Trips', data: [0.30, 0.22, 0.18], borderColor: C.muted, backgroundColor: 'transparent', borderDash: [5,5], tension: 0.3, pointRadius: 4, borderWidth: 1.5 }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { font: monoFont, boxWidth: 12 } } },
+      scales: {
+        y: { grid: { color: C.light }, title: { display: true, text: 'β (income)', font: monoFont }, ticks: { font: monoFont } },
+        x: { grid: { display: false }, ticks: { font: monoFont } }
+      }
+    }
+  });
+}
+
+const ascData = {
+  nonwork: {
+    Transit: [-0.69, -0.47, -0.06],
+    Taxi: [-2.99, -3.93, -6.45],
+    TNC: [-2.36, -1.38, -2.72],
+    Walk: [3.56, 2.47, 1.40],
+    Bike: [-0.93, -2.74, -3.75]
+  },
+  work: {
+    Transit: [0.14, -1.10, -1.46],
+    Taxi: [-2.68, -6.14, -8.09],
+    TNC: [-1.31, -2.61, -0.98],
+    Walk: [3.21, 0.56, 0.82],
+    Bike: [0.07, -4.28, -3.17]
+  }
+};
+const ascColors = { Transit: '#2b6cc4', Taxi: '#e6a817', TNC: '#c44b2b', Walk: '#2b8c5a', Bike: '#8b5cf6' };
+
+function renderP2ASC(type) {
+  if (p2ASCChart) p2ASCChart.destroy();
+  const ctx = document.getElementById('p2ChartASC').getContext('2d');
+  const d = ascData[type];
+  p2ASCChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2017','2019','2022'],
+      datasets: Object.keys(d).map(mode => ({
+        label: mode, data: d[mode],
+        borderColor: ascColors[mode],
+        backgroundColor: 'transparent',
+        tension: 0.3, pointRadius: 5, borderWidth: 2,
+        pointBackgroundColor: ascColors[mode]
+      }))
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { labels: { font: monoFont, boxWidth: 12, padding: 14 } },
+        annotation: undefined
+      },
+      scales: {
+        y: {
+          grid: { color: C.light },
+          title: { display: true, text: 'ASC (vs. Auto)', font: monoFont },
+          ticks: { font: monoFont }
+        },
+        x: { grid: { display: false }, ticks: { font: monoFont } }
+      }
+    }
+  });
+}
+function toggleP2Chart(type) {
+  document.querySelectorAll('#project2 .chart-container:nth-of-type(2) .tab-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  renderP2ASC(type);
+}
+
+function renderP2Trip() {
+  if (p2TripChart) p2TripChart.destroy();
+  const ctx = document.getElementById('p2ChartTrip').getContext('2d');
+  const features = ['HH Size','Income','Auto Own','Workers','Drivers','Density','Retired','HH w/ Children'];
+  const d2009 = [1.543,0.871,-0.125,1.098,0.782,-0.143,1.071,2.713];
+  const d2017 = [2.178,0.433,0.109,0.397,0.389,0.054,0.335,1.282];
+  const d2022 = [0.149,0.302,0.218,0.536,0.807,0.412,0.760,1.944];
+  p2TripChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: features,
+      datasets: [
+        { label: '2009', data: d2009, backgroundColor: 'rgba(43,108,196,0.3)', borderColor: C.blue, borderWidth: 1.5, borderRadius: 3 },
+        { label: '2017', data: d2017, backgroundColor: 'rgba(43,108,196,0.6)', borderColor: C.blue, borderWidth: 0, borderRadius: 3 },
+        { label: '2022', data: d2022, backgroundColor: C.blue, borderColor: C.blue, borderWidth: 0, borderRadius: 3 }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { font: monoFont, boxWidth: 12 } } },
+      scales: {
+        y: { grid: { color: C.light }, title: { display: true, text: 'Coefficient (β)', font: monoFont }, ticks: { font: monoFont } },
+        x: { grid: { display: false }, ticks: { font: monoFont, maxRotation: 45 } }
+      }
+    }
+  });
+}
+
+// ════════════════════════════
+// PROJECT 3 CHARTS
+// ════════════════════════════
+let p3ChartInst = null, p3CostChart = null;
+
+const p3Data = {
+  stops: {
+    labels: ['Northbound','Southbound'],
+    before: [53, 50], after: [35, 35],
+    ylabel: 'Number of Stops'
+  },
+  time: {
+    labels: ['Northbound','Southbound','Round-Trip Cycle'],
+    before: [66.05, 61.60, 147.7], after: [63.70, 59.57, 143.3],
+    ylabel: 'Minutes'
+  },
+  spacing: {
+    labels: ['Northbound','Southbound'],
+    before: [199, 206], after: [306, 294],
+    ylabel: 'Avg. Stop Spacing (meters)'
+  }
+};
+
+function renderP3Chart(mode) {
+  if (p3ChartInst) p3ChartInst.destroy();
+  const ctx = document.getElementById('p3Chart').getContext('2d');
+  const d = p3Data[mode];
+  p3ChartInst = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: d.labels,
+      datasets: [
+        { label: 'Before', data: d.before, backgroundColor: C.greenLight, borderColor: C.green, borderWidth: 1.5, borderRadius: 4 },
+        { label: 'After Optimization', data: d.after, backgroundColor: C.green, borderRadius: 4 }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { labels: { font: monoFont, boxWidth: 12 } } },
+      scales: {
+        y: { grid: { color: C.light }, title: { display: true, text: d.ylabel, font: monoFont }, ticks: { font: monoFont } },
+        x: { grid: { display: false }, ticks: { font: monoFont } }
+      }
+    }
+  });
+}
+function toggleP3Chart(mode) {
+  document.querySelectorAll('#project3 .tab-controls').forEach(tc => {
+    tc.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  });
+  event.target.classList.add('active');
+  renderP3Chart(mode);
+}
+
+function renderP3Cost() {
+  if (p3CostChart) p3CostChart.destroy();
+  const ctx = document.getElementById('p3ChartCost').getContext('2d');
+  p3CostChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Weekday Operating','Saturday Operating','Sunday Operating','Sunday Capital Avoidance'],
+      datasets: [{
+        label: 'Annual Savings ($)',
+        data: [72732, 14491, 32864, 850000],
+        backgroundColor: [C.green, C.green, C.green, 'rgba(43,140,90,0.4)'],
+        borderColor: C.green, borderWidth: 1, borderRadius: 6
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: ctx => '$' + ctx.raw.toLocaleString()
+          }
+        }
+      },
+      scales: {
+        x: { grid: { color: C.light }, ticks: { font: monoFont, callback: v => '$' + (v >= 1000 ? (v/1000) + 'K' : v) } },
+        y: { grid: { display: false }, ticks: { font: monoFont } }
+      }
+    }
+  });
+}
+
+// Initialize home page
+document.addEventListener('DOMContentLoaded', () => {
+  showSection('home');
+});
+</script>
+</body>
+</html>
